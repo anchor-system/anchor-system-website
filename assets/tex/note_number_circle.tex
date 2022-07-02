@@ -1,0 +1,21 @@
+
+\documentclass[preview]{standalone}
+\usepackage{tikz}
+
+\begin{document}
+    \begin{tikzpicture}
+        \def \intervals {{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}}
+
+        \def \n {11}
+        \def \max {12}
+        \def \radius {3}
+        \def \startangle {-90}
+
+        \foreach \s in {0,...,\n}{
+            \pgfmathsetmacro{\angle}{(\startangle - 360/\max*\s}
+            \pgfmathsetmacro{\label}{\intervals[\s]}
+            \draw (\angle:-\radius) node {\huge $\label ^ \star$};
+        };
+
+    \end{tikzpicture}
+\end{document}

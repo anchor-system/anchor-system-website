@@ -1,0 +1,13 @@
+
+body {
+    font-family: "Bentham", sans-serif;
+    background-image: url("assets/images/anchor_banner.png");
+    background-size: cover;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,14 @@
+\documentclass[tikz]{standalone}
+
+\begin{document}
+    \begin{tikzpicture}
+        \draw[very thin, black!30] (0,0) grid (22, 6);
+
+        \foreach \y in {0,...,5}
+            \foreach \x in {0,...,21}
+                \pgfmathsetmacro\z{int(Mod(5 * \y + \x, 12))}
+                \node at (\x+0.5,\y+0.5) {\z};
+
+    \end{tikzpicture}
+
+\end{document}

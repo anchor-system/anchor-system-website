@@ -1,0 +1,32 @@
+
+\documentclass[preview]{standalone}
+\usepackage{tikz}
+
+\begin{document}
+    \begin{tikzpicture}
+        \def \intervals {{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}}
+        \def \names {{"C", "\cdot", "D", "\cdot", "E", "F", "\cdot", "G", "\cdot", "A", "\cdot", "B"}}
+        
+        \def \n {11}
+        \def \max {12}
+        
+        \def \numberradius {5}
+        \def \arrowradius {4}
+        \def \nameradius {3}
+        
+        \def \startangle {-90}
+
+        \foreach \s in {0,...,\n}{
+            \pgfmathsetmacro{\angle}{(\startangle - 360/\max*\s}
+            
+            \pgfmathsetmacro{\numberlabel}{\intervals[\s]}
+            \pgfmathsetmacro{\namelabel}{\names[\s]}
+            
+            \draw (\angle:-\numberradius) node {\huge $\numberlabel ^ \star$};
+            \draw (\angle:-\nameradius) node {\huge $\namelabel$};
+            
+            \draw (\angle:-\arrowradius) node [rotate=\angle - 90] {\huge $\updownarrow$};
+        };
+
+    \end{tikzpicture}
+\end{document}
