@@ -1,0 +1,21 @@
+
+\documentclass[preview]{standalone}
+\usepackage{tikz}
+
+\begin{document}
+    \begin{tikzpicture}
+        \def \intervals {{"C", "\cdot", "D", "\cdot", "E", "F", "\cdot", "G", "\cdot", "A", "\cdot", "B"}}
+
+        \def \n {11}
+        \def \max {12}
+        \def \radius {3}
+        \def \startangle {-90}
+
+        \foreach \s in {0,...,\n}{
+            \pgfmathsetmacro{\angle}{(\startangle - 360/\max*\s}
+            \pgfmathsetmacro{\label}{\intervals[\s]}
+            \draw (\angle:-\radius) node {\huge $\label$};
+        };
+
+    \end{tikzpicture}
+\end{document}
