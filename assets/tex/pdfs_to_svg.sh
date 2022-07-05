@@ -5,8 +5,5 @@ do
     filename=$(basename -- "$fullfile")
     extension="${filename##*.}"
     filename="${filename%.*}"
-    inkscape \
-      --without-gui \
-      --file="${filename}.pdf" \
-      --export-plain-svg="${filename}.svg" 
+    pdf2svg "${filename}.pdf" "${filename}.svg" 
 done
