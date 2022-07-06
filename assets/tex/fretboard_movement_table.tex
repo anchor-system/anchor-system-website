@@ -1,0 +1,29 @@
+\documentclass[margin=.2cm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows,positioning}
+\usepackage{makecell}
+% \usepackage{amssymb}
+
+\pgfdeclarelayer{bg}    % declare background layer
+\pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+
+
+\begin{document}
+\begin{tabular}{||c|c|c||} 
+ \hline
+ \thead{Distance From \\ Horizontal Anchor Point} & \thead{Modification from \\$\rightarrow$ Movement} & \thead{Modification from \\$\leftarrow$ Movement} \\ [0.5ex] 
+ \hline\hline
+ 1 & +5 & -5 \\ 
+ \hline
+ 2 & -2 & +2 \\
+ \hline
+ 3 & +3 & -3 \\
+ \hline
+ 4 & -4 & +4 \\
+ \hline
+ 5 & +1 & -1 \\ 
+ \hline
+\end{tabular}
+
+\end{document}
