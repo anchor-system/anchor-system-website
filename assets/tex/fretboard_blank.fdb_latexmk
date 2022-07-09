@@ -1,9 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1657114596 "fretboard_blank.tex" "fretboard_blank.pdf" "fretboard_blank" 1657114597
+["pdflatex"] 1657325579 "fretboard_blank.tex" "fretboard_blank.pdf" "fretboard_blank" 1657325580
   "/dev/null" 0 -1 0 ""
-  "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
-  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1650183167 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb" 1650183167 33993 9b89b85fd2d9df0482bd47194d1d3bf3 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1650183167 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty" 1650183167 492 1994775aa15b0d1289725a0b1bbc2d4c ""
   "/usr/share/texmf-dist/tex/generic/iftex/iftex.sty" 1650183167 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
@@ -96,10 +93,9 @@
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1650183167 56029 3f7889dab51d620aa43177c391b7b190 ""
   "/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1650183167 4902 efb3d66683a2da2a232f71e3a571a899 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1650183167 39911 2da6c67557ec033436fe5418a70a8a61 ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1656781685 4278762 af3ac1370db81a450c1118eabf1fe718 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1656781679 2927658 5984ac701a336e2ced3fb5137dee09fe ""
-  "fretboard_blank.aux" 1657114597 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "fretboard_blank.tex" 1657114592 3003 2eba6a710f5ffaa38aec61b69f151778 ""
+  "fretboard_blank.aux" 1657325580 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "fretboard_blank.tex" 1657325577 3034 f7725082864e4887385bcd7814c0a003 ""
   (generated)
   "fretboard_blank.aux"
   "fretboard_blank.log"
