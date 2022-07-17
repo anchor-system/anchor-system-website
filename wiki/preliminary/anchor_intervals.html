@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Music</title>
+    <link rel="stylesheet" href="../wiki.css">
+</head>
+
+<body>
+<div class="thin_wrapper">
+    <h1 class="text_center">Anchor Intervals</h1>
+
+    <div class="line_behind"><span class="line"></span>
+        <h2 class="line_text">Note Intervals</h2></div>
+
+    <p>
+        Before we get started, we'll recall that we defined what the interval between two numbers is, so given two
+        numbers X and Y, then the interval between them is the number you add to get from X to Y, namely Y - X.
+    </p>
+
+    <p>
+        Since our notes have numbers in them we can also do something similar, so given two notes X* and Y*, we define
+        the interval between them to be Y - X, the result is a number which is not a note.
+    </p>
+
+    <p>
+        The interval between two notes could be any distance from 0 to 11 (we'll forget about negative numbers for now,
+        since a negative is equivalent to one of the positive ones anyways). And in the standard system they have
+        developed names for each of the different sizes of intervals, this will be useful so we understand what other
+        musicians are talking about when the say an interval of a fourth, here is the conversion table:
+    </p>
+
+    <table class="center">
+        <thead>
+        <tr>
+            <th>Distance<br></th>
+            <th>Standard Name for Distance</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>0<br></td>
+            <td>Perfect Unison</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Minor Second</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Major Second</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Minor Third</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Major Third</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Perfect Fourth</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Tritone</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Perfect Fifth<br></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Minor Sixth</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Major Sixth</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Minor Seventh</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Perfect Octave</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <div class="line_behind"><span class="line"></span>
+        <h2 class="line_text">Anchor Intervals</h2></div>
+
+    <p>
+        In our first lesson we touched on considering notes with respect to some anchor note, for example if our
+        anchor note was 8* (Ab) then the note 9* would be considered as 1. Whenever we specify a note like this, it
+        will be called an anchor interval and no asterisk will be written.
+    </p>
+
+    <p>
+        More explicitly an anchor interval of a note is the interval between the anchor note and the note we're
+        considering. Writing anchor interval over and over again takes up a lot of space, for that reason we'll shorten
+        anchor interval to ai.
+    </p>
+
+    <p>
+        For a new example, let's set our anchor note to be 2* (D) and let's consider notes with respect to that
+        anchor note. If we consider 4*, we can see that I(2*, 4*) = 2, so its ai is 2.
+    </p>
+
+
+    <div class="line_behind"><span class="line"></span>
+        <h2 class="line_text">Computing Anchor Intervals efficiently</h2></div>
+
+    <p>
+        All we have to do is use our idea from our article on numbers in a cyclic system which says that for any two
+        numbers X and Y, the interval between them is Y - X, and that a fast way to figure that out is to do Y - s(X).
+    </p>
+
+    <p>
+        Moving that into our context, we have some anchor note A*, and some other note N*, then N* has the anchor
+        interval of I(A*, N*) = N - A = N - s(A).
+    </p>
+
+
+    <h3>The Process</h3>
+
+    <ul>
+        <li>
+            Take your anchor note and consider the smallest representation of that number. For example if my anchor note
+            was 8*, then we would be thinking of the number -4.
+        </li>
+        <li>
+            Now take your other note and subtract the small representation of the anchor note from your note, the result
+            is the anchor interval. Note that if you're subtracting a negative number you can just add it. So in our
+            case if our other note was 3*, then we consider 3 - (-4) = 3 + 4 = 7.
+        </li>
+    </ul>
+
+    <p>
+        Now that you have the process, use the anchor interval trainer under the web applications until you are fast.
+    </p>
+
+
+</div>
+
+<!-- <script src="https://utteranc.es/client.js" repo="cuppajoeman/utterances-comments" issue-term="pathname"
+    theme="github-dark" crossorigin="anonymous" async>
+    </script> -->
+</body>
+
+</html>
