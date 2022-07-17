@@ -13,7 +13,7 @@
         \foreach \s in {0,...,\n}{
             \pgfmathsetmacro{\angle}{(\startangle - 360/\max*\s}
             \pgfmathsetmacro{\label}{\intervals[\s]}
-            \draw (\angle:-\radius) node {\huge $\label ^ \star$};
+            \draw (\angle:-\radius) node {\huge $\label$};
         };
 
     \end{tikzpicture}
