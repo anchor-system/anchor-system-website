@@ -3,11 +3,16 @@ import random
 
 pygame.init()
 
+SCREEN_RATIO = 2/3
+
 WINDOW_WIDTH = 1200
-WINDOW_HEIGHT = 600
+WINDOW_HEIGHT = WINDOW_WIDTH * SCREEN_RATIO
 
 BLACK = (0, 0, 0)
-WHITE = (100, 100, 100)
+GRAY = (100, 100, 100)
+WHITE = (255, 255, 255)
+
+BACKGROUND_COLOR = WHITE
 
 SCREEN = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 
@@ -24,7 +29,10 @@ HARMONICS = [2, 3, 5, 7]
 
 
 def draw_grid():
-    pygame.draw.line(SCREEN, WHITE, (PADDING, STRING_LOC_Y), (PADDING + STRING_LENGTH, STRING_LOC_Y))
+
+    SCREEN.fill(BACKGROUND_COLOR)
+
+    pygame.draw.line(SCREEN, GRAY, (PADDING, STRING_LOC_Y), (PADDING + STRING_LENGTH, STRING_LOC_Y))
 
     for j, harmonic in enumerate(HARMONICS):
 
