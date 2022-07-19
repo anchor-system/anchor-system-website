@@ -1,5 +1,6 @@
 import pygame
 import random
+import math
 
 pygame.init()
 
@@ -83,6 +84,17 @@ def draw_watermark():
     )
     SCREEN.blit(text, text_rect)
 
+def draw_harmonic_information():
+    for i, n in enumerate(HARMONICS[::-1]):
+        s = f"Harmonic multiple: {n}, Distance is given by: round(math.log({n}, 2) * 12) % 12 = {round(math.log(n, 2) * 12) % 12}"
+
+        font = pygame.font.SysFont("latinmodernroman", int((WINDOW_WIDTH/2)/45))
+        text = font.render(s, True, FRET_COLOR)
+        text_rect = text.get_rect(
+            center=((text.get_width()/2 + PADDING), WINDOW_HEIGHT - (text.get_height() * 1.5 * (i + 1) +  + PADDING))
+        )
+        SCREEN.blit(text, text_rect)
+
 
 def draw_harmonics():
 
@@ -112,6 +124,7 @@ def draw():
 
     draw_frets()
     draw_harmonics()
+    draw_harmonic_information()
     draw_watermark()
 
     pygame.display.flip()
