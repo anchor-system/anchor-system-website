@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f5cf1640-3191-40db-a0f8-bdc8036290eb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/generated/harmonics.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/generated/harmonics.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/generated/harmonics.py" beforeDir="false" afterPath="$PROJECT_DIR$/assets/generated/harmonics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +109,7 @@
       <workItem from="1658029711330" duration="6887000" />
       <workItem from="1658109477322" duration="5567000" />
       <workItem from="1658158595841" duration="6830000" />
-      <workItem from="1658243128975" duration="121000" />
+      <workItem from="1658243128975" duration="528000" />
     </task>
     <servers />
   </component>
@@ -127,7 +128,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/the_anchor_system$harmonics.coverage" NAME="harmonics Coverage Results" MODIFIED="1658199347035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assets/generated" />
+    <SUITE FILE_PATH="coverage/the_anchor_system$harmonics.coverage" NAME="harmonics Coverage Results" MODIFIED="1658243665319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assets/generated" />
     <SUITE FILE_PATH="coverage/the_anchor_system$harmonics_approximation.coverage" NAME="harmonics_approximation Coverage Results" MODIFIED="1658113314156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assets/generated" />
   </component>
 </project>

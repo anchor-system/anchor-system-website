@@ -15,6 +15,13 @@ BLACK = (0, 0, 0)
 GRAY = (100, 100, 100)
 WHITE = (255, 255, 255)
 
+HARMONIC_COLORS = [
+    (13, 59, 102),
+    (244, 211, 94),
+    (238, 150, 75),
+    (249, 87, 57),
+]
+
 if THEME == "DARK":
     BACKGROUND_COLOR = BLACK
     FRET_COLOR = WHITE
@@ -83,7 +90,7 @@ def draw_harmonics():
 
     for j, harmonic in enumerate(HARMONICS):
 
-        COLOR = [random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)]
+        COLOR = HARMONIC_COLORS[j % len(HARMONIC_COLORS)]
 
         for i in range(1, harmonic):
             string_percentage = i / harmonic
