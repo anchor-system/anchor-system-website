@@ -5,31 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5cf1640-3191-40db-a0f8-bdc8036290eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/applications/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/ai_trainer/ai_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/ai_trainer/ai_trainer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/ai_trainer/ai_trainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/ai_trainer/ai_trainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/chord_structure_trainer/chord_structure_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/chord_structure_trainer/chord_structure_trainer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/chord_structure_trainer/chord_structure_trainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/chord_structure_trainer/chord_structure_trainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/chord_trainer/chord_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/chord_trainer/chord_trainer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/chord_trainer/chord_trainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/chord_trainer/chord_trainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/chord_trainer/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/chord_trainer/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/fretboard_ai_collection_trainer/fretboard_ai_collection_trainer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/fretboard_ai_collection_trainer/fretboard_ai_collection_trainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/fretboard_chord_trainer/fretboard_chord_trainer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/fretboard_chord_trainer/fretboard_chord_trainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/fretboard_trainer/fretboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/fretboard_trainer/fretboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/fretboard_trainer/fretboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/fretboard_trainer/fretboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/horizontal_visualizer/down.png" beforeDir="false" afterPath="$PROJECT_DIR$/applications/horizontal_visualizer/down.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/horizontal_visualizer/horizontal_visualizer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/horizontal_visualizer/horizontal_visualizer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/horizontal_visualizer/horizontal_visualizer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/horizontal_visualizer/horizontal_visualizer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/horizontal_visualizer/up.png" beforeDir="false" afterPath="$PROJECT_DIR$/applications/horizontal_visualizer/up.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/interval_trainer/interval_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/interval_trainer/interval_trainer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/interval_trainer/interval_trainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/interval_trainer/interval_trainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/note_trainer/note_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/note_trainer/note_trainer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/note_trainer/note_trainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/note_trainer/note_trainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/number_trainer/number_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/number_trainer/number_trainer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/applications/number_trainer/number_trainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/number_trainer/number_trainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wiki/wiki.html" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/wiki.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +113,7 @@
       <workItem from="1658243128975" duration="528000" />
       <workItem from="1658243903101" duration="367000" />
       <workItem from="1658244763140" duration="1754000" />
-      <workItem from="1658344639234" duration="7383000" />
+      <workItem from="1658344639234" duration="7697000" />
     </task>
     <servers />
   </component>
