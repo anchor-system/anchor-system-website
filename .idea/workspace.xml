@@ -5,9 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5cf1640-3191-40db-a0f8-bdc8036290eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/applications/application.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/generated/harmonics.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/generated/harmonics.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/generated/harmonics.py" beforeDir="false" afterPath="$PROJECT_DIR$/assets/generated/harmonics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/ai_trainer/ai_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/ai_trainer/ai_trainer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/ai_trainer/ai_trainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/ai_trainer/ai_trainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/chord_structure_trainer/chord_structure_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/chord_structure_trainer/chord_structure_trainer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/chord_structure_trainer/chord_structure_trainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/chord_structure_trainer/chord_structure_trainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/chord_trainer/chord_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/chord_trainer/chord_trainer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/chord_trainer/chord_trainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/chord_trainer/chord_trainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/chord_trainer/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/chord_trainer/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/fretboard_ai_collection_trainer/fretboard_ai_collection_trainer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/fretboard_ai_collection_trainer/fretboard_ai_collection_trainer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/fretboard_chord_trainer/fretboard_chord_trainer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/fretboard_chord_trainer/fretboard_chord_trainer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/fretboard_trainer/fretboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/fretboard_trainer/fretboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/fretboard_trainer/fretboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/fretboard_trainer/fretboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/horizontal_visualizer/down.png" beforeDir="false" afterPath="$PROJECT_DIR$/applications/horizontal_visualizer/down.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/horizontal_visualizer/horizontal_visualizer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/horizontal_visualizer/horizontal_visualizer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/horizontal_visualizer/horizontal_visualizer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/horizontal_visualizer/horizontal_visualizer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/horizontal_visualizer/up.png" beforeDir="false" afterPath="$PROJECT_DIR$/applications/horizontal_visualizer/up.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/interval_trainer/interval_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/interval_trainer/interval_trainer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/interval_trainer/interval_trainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/interval_trainer/interval_trainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/note_trainer/note_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/note_trainer/note_trainer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/note_trainer/note_trainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/note_trainer/note_trainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/number_trainer/number_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/number_trainer/number_trainer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/applications/number_trainer/number_trainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/number_trainer/number_trainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/wiki.html" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/wiki.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +41,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -32,21 +56,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ccn/the-anchor-system&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/ccn/website",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Python.harmonics">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/applications" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
     <configuration name="harmonics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="the-anchor-system" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,11 +122,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.harmonics" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -111,7 +137,8 @@
       <workItem from="1658158595841" duration="6830000" />
       <workItem from="1658243128975" duration="528000" />
       <workItem from="1658243903101" duration="367000" />
-      <workItem from="1658244763140" duration="540000" />
+      <workItem from="1658244763140" duration="1754000" />
+      <workItem from="1658344639234" duration="7383000" />
     </task>
     <servers />
   </component>
@@ -128,9 +155,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/the_anchor_system$harmonics.coverage" NAME="harmonics Coverage Results" MODIFIED="1658245295961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assets/generated" />
-    <SUITE FILE_PATH="coverage/the_anchor_system$harmonics_approximation.coverage" NAME="harmonics_approximation Coverage Results" MODIFIED="1658113314156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assets/generated" />
   </component>
 </project>

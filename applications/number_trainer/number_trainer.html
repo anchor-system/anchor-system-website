@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Music</title>
-    <link rel="stylesheet" href="../../wiki.css">
+    <link rel="stylesheet" href="../../wiki/wiki.css">
 </head>
 <body>
 
@@ -41,17 +41,19 @@
 <div id="training_area">
     <div class="full_center">
         <table id="fret_line"
-               style="font-size: xxx-large; border: 1px solid white; width: 80%;border-collapse:separate; border-spacing:1em; white-space: nowrap">
+               style="font-size: xxx-large; border: 1px solid white; width: 80%;border-collapse:separate; border-spacing:1em;">
             <tr>
-                <td>E</td>
-                <td>Dmaj7</td>
+                <td id="first-number">0*</tdid>
+                <td id="operator" style="border: None;">-</td>
+                <td id="second-number">5*</td>
+                <td style="border: None;">=</td>
                 <td id="solution" contenteditable="true">10</td>
             </tr>
         </table>
     </div>
 </div>
 
-<script src="chord_trainer.js"></script>
+<script src="number_trainer.js"></script>
 
 </body>
 </html>
