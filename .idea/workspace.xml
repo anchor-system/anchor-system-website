@@ -7,7 +7,6 @@
     <list default="true" id="f5cf1640-3191-40db-a0f8-bdc8036290eb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/applications/interactive_fretboard_with_info/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/interactive_fretboard_with_info/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/interactive_fretboard_with_info/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/interactive_fretboard_with_info/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +126,7 @@
       <workItem from="1658243903101" duration="367000" />
       <workItem from="1658244763140" duration="1754000" />
       <workItem from="1658344639234" duration="8297000" />
-      <workItem from="1658538734707" duration="9625000" />
+      <workItem from="1658538734707" duration="10264000" />
     </task>
     <servers />
   </component>
