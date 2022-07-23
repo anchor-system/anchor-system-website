@@ -5,58 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5cf1640-3191-40db-a0f8-bdc8036290eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/3_10.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/3_11.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/3_4.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/3_5.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/3_6.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/3_7.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/3_8.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/3_9.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/4_0.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/4_1.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/4_10.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/4_11.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/4_2.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/4_3.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/4_4.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/4_5.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/4_6.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/4_7.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/4_8.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/4_9.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/5_0.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/5_1.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/5_10.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/5_11.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/5_2.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/5_3.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/5_4.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/5_5.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/5_6.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/5_7.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/5_8.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/5_9.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/6_0.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/6_1.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/6_10.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/6_11.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/6_2.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/6_3.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/6_4.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/6_5.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/6_6.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/6_7.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/6_8.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/6_9.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/guitar_samples/7_0.flac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/interactive_fretboard_with_info/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/interactive_fretboard_with_info/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/interactive_fretboard_with_info/modal/modal.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/interactive_fretboard_with_info/modal/modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/interactive_fretboard_with_info/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/wiki.html" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/wiki.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/interactive_fretboard_with_info/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/interactive_fretboard_with_info/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/interactive_fretboard_with_info/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/interactive_fretboard_with_info/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +57,10 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.index.js">
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/applications/interactive_fretboard_with_info/index.js" working-dir="$PROJECT_DIR$/applications/interactive_fretboard_with_info">
+      <method v="2" />
+    </configuration>
     <configuration name="harmonics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="the-anchor-system" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,6 +105,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.index.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -168,7 +127,7 @@
       <workItem from="1658243903101" duration="367000" />
       <workItem from="1658244763140" duration="1754000" />
       <workItem from="1658344639234" duration="8297000" />
-      <workItem from="1658538734707" duration="1697000" />
+      <workItem from="1658538734707" duration="9625000" />
     </task>
     <servers />
   </component>

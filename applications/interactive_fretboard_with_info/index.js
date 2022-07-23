@@ -1,4 +1,6 @@
-const BASE_STRINGS = [4, 9, 14, 19, 24, 29];
+const FOURTHS_STRINGS = [4, 9, 14, 19, 24, 29];
+const STANDARD_STRINGS = [4, 9, 14, 19, 23, 28];
+var BASE_STRINGS = FOURTHS_STRINGS;
 const MARKERS = [3, 5, 7, 9, 12, 15, 17, 19, 21];
 const NUM_STRINGS = 6;
 const NUM_FRETS = 21;
@@ -256,6 +258,48 @@ function fretPosition(position) {
     }
 }
 
+function reloadTable() {
+    let tbl = document.getElementById('fret_table');
+
+    for (let i = 0; i < NUM_STRINGS; i++) {
+        const tr = tbl.rows[i];
+        for (let j = 0; j < NUM_FRETS; j++) {
+            const [octave, note] = constructNoteAndOctaveFromFretboardPosition(i, j);
+            const td = tr.cells[j]
+            td.id = `${octave}_${note}`;
+            td.onclick = function () {
+                if (MODE === "HARMONY") {
+                    fretPosition(td);
+                } else if (MODE === "MELODY") {
+                    new Audio(`../guitar_samples/${octave}_${note}.flac`).play();
+                    td.classList.add("activated");
+                    td.classList.add("just_played");
+                    let chordWindow = document.getElementById("chord_window");
+                    chordWindow.innerHTML = posMod(note - KEY, 12).toString();
+                    // this.style.transitionDuration = "0.001ms"
+                    // this.style.backgroundColor = 'green';
+                }
+            }
+            td.addEventListener("transitionend", function() {
+                // This gets called when it turns to blue or when it turns green
+                // After one is activated it gets the just_played tag
+                if (this.classList.contains("just_played")) {
+                    this.classList.remove("activated");
+                }
+            })
+            if (MARKERS.includes(j)) {
+                td.style.borderRight = '3px solid black';
+                td.style.borderLeft = '1px solid black';
+                td.style.borderTop = '1px solid black';
+                td.style.borderBottom = '1px solid black';
+            } else {
+                td.style.border = '1px solid black';
+            }
+        }
+    }
+
+}
+
 function tableCreate() {
 
     let tbl = document.createElement('table');
@@ -412,7 +456,20 @@ function removeLoadingArea() {
     fretboard.removeChild(loadingArea);
 }
 
+function buttonSetup() {
+    document.getElementById("enable_standard").onclick = function () {
+        BASE_STRINGS = STANDARD_STRINGS;
+        reloadTable();
+    }
+
+    document.getElementById("enable_fourths").onclick = function () {
+        BASE_STRINGS = FOURTHS_STRINGS;
+        reloadTable();
+    }
+}
+
 window.onload = function () {
+    buttonSetup();
     constructLoadingArea();
     preloadAudio();
     removeLoadingArea();
