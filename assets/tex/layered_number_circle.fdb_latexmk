@@ -1,11 +1,12 @@
 # Fdb version 3
-["pdflatex"] 1658962921 "layered_number_circle.tex" "layered_number_circle.pdf" "layered_number_circle" 1658962922
+["pdflatex"] 1658963020 "layered_number_circle.tex" "layered_number_circle.pdf" "layered_number_circle" 1658963021
   "/dev/null" 0 -1 0 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1650183167 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1650183167 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1650183167 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1650183167 1124 6c73e740cf17375f03eec0ee63599741 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1650183167 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1650183167 32362 179c33bbf43f19adbb3825bb4e36e57a ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1650183167 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty" 1650183167 492 1994775aa15b0d1289725a0b1bbc2d4c ""
@@ -99,8 +100,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1650183167 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1656781685 4278762 af3ac1370db81a450c1118eabf1fe718 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1656781679 2927658 5984ac701a336e2ced3fb5137dee09fe ""
-  "layered_number_circle.aux" 1658962922 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "layered_number_circle.tex" 1658962914 1359 43b53bb74fd75e45d8e2cbd1f664e165 ""
+  "layered_number_circle.aux" 1658963021 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "layered_number_circle.tex" 1658963017 1344 86308afeae01d9f8d2de9b1227f3ec06 ""
   (generated)
   "layered_number_circle.aux"
   "layered_number_circle.log"
