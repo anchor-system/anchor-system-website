@@ -24,9 +24,9 @@
         \foreach \s in {0,...,\n}{
             \pgfmathsetmacro{\angle}{(\startangle - 360/\max*\s}
             
-	    \pgfmathsetmacro{\outerlabel}{Mod(\intervals[\s] + 11, 12)}
+	    \pgfmathsetmacro{\outerlabel}{int(Mod(\intervals[\s] + 11, 12))}
             \pgfmathsetmacro{\middlelabel}{\intervals[\s]}
-            \pgfmathsetmacro{\innerlabel}{Mod(\intervals[\s] + 1, 12)}
+	    \pgfmathsetmacro{\innerlabel}{int(Mod(\intervals[\s] + 1, 12))}
             
             \draw (\angle:-\outerradius) node {\huge $\outerlabel$};
             \draw (\angle:-\middleradius) node {\huge $\middlelabel$};

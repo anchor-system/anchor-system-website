@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.7.2)  27 JUL 2022 20:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.7.2)  27 JUL 2022 20:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -407,20 +407,19 @@ Preview: Tightpage 0 0 0 0
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 (./layered_number_circle.aux) ) 
 Here is how much of TeX's memory you used:
- 12716 strings out of 478238
- 263741 string characters out of 5850457
+ 12720 strings out of 478238
+ 263830 string characters out of 5850457
  529501 words of memory out of 5000000
- 30747 multiletter control sequences out of 15000+600000
+ 30751 multiletter control sequences out of 15000+600000
  471999 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  100i,7n,104p,402b,661s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pf
-b>
-Output written on layered_number_circle.pdf (1 page, 20260 bytes).
+ts/cm/cmr17.pfb>
+Output written on layered_number_circle.pdf (1 page, 12287 bytes).
 PDF statistics:
- 21 PDF objects out of 1000 (max. 8388607)
- 13 compressed objects within 1 object stream
+ 16 PDF objects out of 1000 (max. 8388607)
+ 10 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
