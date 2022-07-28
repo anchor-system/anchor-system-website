@@ -3,12 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <title>Music</title>
-<!--    <link rel="stylesheet" href="../../wiki/wiki.css">-->
+    <link rel="stylesheet" href="../../wiki/wiki.css">
 </head>
 <body>
 
+<h1>Anchor System Work Sheet</h1>
+<p>
+    At the end of the day, in order to build stuff on the guitar, we are going to need anchor intervals, a common
+    structure in music are chords, so we'll come up with a method on how to convert a chord into a collection of ai's.
+</p>
+
+<h2>Quality Structures</h2>
+<p>
+    A quality is what you see after a note in a chord, so for example if we take the chord F maj7, then the quality is
+    maj7. The quality defines a collection of distances relative to the root (F) of the chord. Here are some of the main
+    chords:
+</p>
+
+<ul>
+    <li>
+        maj7: 0 4 7 11
+    </li>
+    <li>
+        min7: 0 3 7 10
+    </li>
+    <li>
+        dom7: 0 4 7 10
+    </li>
+    <li>
+        half-dim7: 0 3 6 10
+    </li>
+    <li>
+        dim7: 0 3 6 9
+    </li>
+    <li>
+        min-maj7: 0 3 7 11
+    </li>
+    <li>
+        maj6: 0 4 7 9
+    </li>
+    <li>
+        min6: 0 3 7 9
+    </li>
+</ul>
+
+<h2>Format</h2>
+
+<p>
+    The left note is the anchor note. The first step is to figure out what it is as it's number representation, so for
+    example if that note was B, then we'd think of the representation 11*.
+</p>
+
+<p>
+    The next step is to look at the root of the chord, so for example if the chord we're interested in was Eb dim7, then
+    we'd look at Eb and convert that to it's number representation which would be 3*.
+</p>
+
+<p>
+    With the anchor note and the root of the chord written as numbers we can easily compute the anchor interval of the
+    root of the chord by asking ourselves what we need to add to 11* to get to 3*, which would be 4.
+</p>
+
+<p>
+    Once we have the anchor interval of the root of the chord, we use the quality structure to stack on top of that
+    anchor interval. So in our example we have dim7 which defines the distances 0 3 6 9, and then stacking that onto 4
+    we would obtain 4 7 10 1, which is what we would write in the blank.
+</p>
+
+<h2>Tips</h2>
+<p>
+    You'll find that once you have the quality structures under your control the longest part of the process is finding
+    the anchor interval and also stacking the distances onto the anchor interval.
+</p>
+
+<p>
+    The key to getting faster at this is to use the small representation to reduce the complexity of a computation, for
+    example a beginner might solve a question like 10 + 6, by getting to 16, then seeing that 16 is 4 more than 12 so
+    their answer would be 4, due to that reasoning.
+</p>
+
+<p>
+    A more experienced player would see 10 as the same thing as -2, since moving ten steps one direction leaves you at
+    the same note as moving the opposite direction twice. Therefore we can reduce 10 + 6 to -2 + 6 = 4, which is much
+    simpler to solve. Here are the following "small representations" of numbers:
+</p>
+
+<ul>
+    <li>0, -0</li>
+    <li>1, -11</li>
+    <li>2, -10</li>
+    <li>3, -9</li>
+    <li>4, -8</li>
+    <li>5, -7</li>
+    <li>6, -6</li>
+    <li>7, -5</li>
+    <li>8, -4</li>
+    <li>9, -3</li>
+    <li>10, -2</li>
+    <li>11, -1</li>
+    <li>0, -0</li>
+</ul>
+
+
+
 <div id="training_area">
-    <div class="full_center">
+    <!--    <div class="full_center">-->
+    <div>
         <table id="fret_line"
                style=" border: 1px solid black; width: 80%;border-collapse:separate; border-spacing:.5em; white-space: nowrap">
         </table>

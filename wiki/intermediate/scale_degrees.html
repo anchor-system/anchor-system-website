@@ -23,7 +23,7 @@
         Let's say we wanted to enumerate the C major scale, then what we would do is this
     </p>
 
-    <table>
+    <table class="center">
         <tbody>
         <tr>
             <th>Scale<br></th>
@@ -72,7 +72,7 @@
         This process also works just fine on any other major scale, so we could take the F# major scale like this
     </p>
 
-    <table>
+    <table class="center">
         <thead>
         <tr>
             <th>Scale<br></th>
@@ -128,7 +128,7 @@
         Now if we were to do the same thing as we've done above but for our notation we would get something like this
     </p>
 
-    <table>
+    <table class="center">
         <thead>
         <tr>
             <th>Scale<br></th>
@@ -186,29 +186,59 @@
         <h2 class="line_text">Use in Chords</h2></div>
 
     <p>
-        Let's say we saw a chord which was a G7 9 while our anchor note is C, the way we could make sense of this is first by inspecting the
-        quality which is dom7, defining the distances of 0 4 7 10, in a chord when we see a number after the quality it
-        is referencing the enumeration system we've come up with in the previous section. So the chord would really look
-        like G7 <i>9</i> (with the italic) if we didn't want it to be confusing at all.
+        Let's say we saw a chord which was a G7 add 9 while our anchor note is C, the way we could make sense of this is
+        first by inspecting the quality which is dom7, defining the distances of 0 4 7 10. In a chord when we see a
+        number after the quality it is referencing the enumeration system we've come up with in the previous section. So
+        the chord would really look like G7 add <i>9</i> (with the italic) if we didn't want it to be confusing at all.
     </p>
 
     <p>
-        Now if we reference our table we can see that <i>9</i> references the anchor interval 2, and so we just add this
-        to the distances defined by our quality, so dom7 <i>9</i> defines the quality 0 4 7 10 2, then we can stack that
-        onto 7 (the anchor interval of G) and get 7 11 2 5 9, then construct it on the guitar.
+        Now if we reference our table we can see that <i>9</i> references the anchor interval 2, and so we just add
+        (hence the naming 'add 9') this to the distances defined by our quality, so dom7 <i>9</i> defines the quality 0
+        4 7 10 2, then we can stack that onto 7 (the anchor interval of G) and get 7 11 2 5 9, then construct it on the
+        guitar.
+    </p>
+
+    <p>
+        Additionally we can flatten or sharpen these numbers so that the represent something else, so for example if we
+        saw the chord G7 b<i>9</i> (it could be written as G7 add b<i>9</i>, but the 'add' is optional), then of course
+        we get the 0 4 7 10 from the dom7 quality, then we would take the <i>9</i> which represent 2 (from the original
+        enumeration table) and then flatten it to become a 1.
+    </p>
+
+    <p>
+        Therefore when we see a G7 b9 the distances defined by the quality would be 0 4 7 10 1, and stacking that on
+        7 (Gs anchor interval) we get 7 11 2 5 8.
+    </p>
+
+    <p>
+        In the examples we've seen the extra numbers at the end of a quality have added to a chord. But sometimes their
+        purpose is to actually modify the chord itself, we can see an example of this in an actual song:
     </p>
 
 
     <img class="inverted_image" src="../assets/scale_degrees/take_the_a_train.png" style="width: 50%; height: auto;">
 
     <p>
-        We'll pull an example from the this tune, and see how we can make sense of it. We can see that the second chord
-        is D7b5, breaking this apart we can see that we first have a D7 chord, if we inspect the quality we know that it
-        is a dominant 7th chord, and therefore is defined by the distances 0 4 7 10.
+        We can see that the second chord is D7b<i>5</i>, breaking this apart we can see that we first have a D7 chord,
+        if we inspect the quality we know that it is a dominant 7th chord, and therefore is defined by the distances 0 4
+        7 10.
     </p>
 
     <p>
-        Taking a look at the b5, we will go to our enumeration system
+        Taking a look at the b <i>5</i>, we will go to our enumeration system and see that <i>5</i> references 7 and so
+        b<i>5</i> references 6 combining that with the dom7 quality we get 0 4 7 10 6. We can see that we have a 7 and 6
+        in the chord at the same time.
+    </p>
+
+    <p>
+        If we played the 6 and 7 we would get more dissonance that might be expected, so in this case we let the 6
+        'override' the 7, and instead consider the whole quality as 0 4 6 10.
+    </p>
+
+    <p>
+        Stacking this on 2 (Ds anchor interval), we get 2 6 8 0 which would be the anchor intervals we use in the bar
+        for D7b<i>5</i>.
     </p>
 
 </div>

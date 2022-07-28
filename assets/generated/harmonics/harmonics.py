@@ -84,6 +84,7 @@ def draw_watermark():
     )
     SCREEN.blit(text, text_rect)
 
+
 def draw_harmonic_information():
     for i, n in enumerate(HARMONICS[::-1]):
         s = f"Harmonic multiple: {n}, Distance is given by: round(math.log({n}, 2) * 12) % 12 = {round(math.log(n, 2) * 12) % 12}"

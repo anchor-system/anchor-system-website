@@ -24,6 +24,7 @@ let rootNoteName;
 let rootNoteNumber;
 let chordQualityName;
 
+
 function generateSituation() {
 
     if (numCreated % numAiPerAc === 0) {
@@ -46,22 +47,35 @@ function generateSituation() {
 
     chordQualityName = Object.keys(FOUR_NOTE_QUALITIES)[Math.floor(Math.random() * Object.keys(FOUR_NOTE_QUALITIES).length)];
 
-    let row = fretLine.insertRow(fretLine.rows.length);
-
-    row.insertCell(0)
-    row.insertCell(1)
-    row.insertCell(2)
-
-    row.cells[0].innerHTML = anchorNoteName;
-    row.cells[1].innerHTML = rootNoteName + " " + chordQualityName;
-    row.cells[2].innerHTML = "_________";
 
     numCreated += 1;
+
+    return [anchorNoteName, rootNoteName, chordQualityName];
+}
+
+function createQuestionRow() {
+    let anchorNoteName, rootNoteName, chordQualityName;
+
+    let row = fretLine.insertRow(fretLine.rows.length);
+
+    for (let i = 0; i < 2; i ++) {
+        [anchorNoteName, rootNoteName, chordQualityName] = generateSituation();
+
+        row.insertCell(3 * i)
+        row.insertCell(3 * i + 1)
+        row.insertCell(3 * i + 2)
+
+        row.cells[3 * i].innerHTML = anchorNoteName;
+        row.cells[3 * i + 1].innerHTML = rootNoteName + " " + chordQualityName;
+        row.cells[3 * i + 2].innerHTML = "_________";
+
+    }
+
 
 }
 
 for (let i = 0; i < 200; i++) {
-    generateSituation();
+    createQuestionRow();
 }
 
 
