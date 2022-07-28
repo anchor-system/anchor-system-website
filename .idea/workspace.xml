@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5cf1640-3191-40db-a0f8-bdc8036290eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/generated/harmonics/octave_overlayed_frets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/the-anchor-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/the-anchor-system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/chord_trainer_sheet/chord_trainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/chord_trainer_sheet/chord_trainer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/chord_trainer_sheet/chord_trainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/chord_trainer_sheet/chord_trainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/generated/harmonics.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/generated/harmonics/harmonics.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/generated/harmonics.py" beforeDir="false" afterPath="$PROJECT_DIR$/assets/generated/harmonics/harmonics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/generated/harmonics.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/generated/harmonics/harmonics.xcf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/generated/harmonics_annotated.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/generated/harmonics/harmonics_annotated.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/generated/harmonics_annotated.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/generated/harmonics/harmonics_annotated.xcf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/generated/harmonics_annotated_printable.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/generated/harmonics/harmonics_annotated_printable.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/generated/harmonics_approximation.py" beforeDir="false" afterPath="$PROJECT_DIR$/assets/generated/harmonics/harmonics_approximation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/generated/harmonics_printable.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/generated/harmonics/harmonics_printable.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/intermediate/scale_degrees.html" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/intermediate/scale_degrees.html" afterDir="false" />
-    </list>
+    <list default="true" id="f5cf1640-3191-40db-a0f8-bdc8036290eb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,7 +129,7 @@
       <workItem from="1658891620735" duration="18000" />
       <workItem from="1658928105309" duration="33000" />
       <workItem from="1659028953066" duration="1498000" />
-      <workItem from="1659031124408" duration="920000" />
+      <workItem from="1659031124408" duration="1615000" />
     </task>
     <servers />
   </component>
