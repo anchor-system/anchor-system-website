@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5cf1640-3191-40db-a0f8-bdc8036290eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/applications/practice_seed/note_of_the_day.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/applications/practice_seed/practice_seed.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/random_collection/all_scales_generator.txt" beforeDir="false" afterPath="$PROJECT_DIR$/applications/collection_of_the_day/all_scales_generator.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/random_collection/random_collection.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/collection_of_the_day/collection_of_the_day.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/random_collection/random_collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/applications/collection_of_the_day/collection_of_the_day.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/wiki.html" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/wiki.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +23,7 @@
       <list>
         <option value="Python Script" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -32,23 +39,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ccn/the-anchor-system/wiki/intermediate&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/c84275317/Desktop/music/the-anchor-system/applications/practice_seed",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\c84275317\Desktop\music\the-anchor-system\applications\practice_seed" />
       <recent name="$PROJECT_DIR$/wiki/intermediate" />
       <recent name="$PROJECT_DIR$/applications" />
     </key>
@@ -130,6 +138,7 @@
       <workItem from="1659197402952" duration="44000" />
       <workItem from="1660069410047" duration="165000" />
       <workItem from="1660156385920" duration="10000" />
+      <workItem from="1677536191554" duration="1208000" />
     </task>
     <servers />
   </component>
