@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5cf1640-3191-40db-a0f8-bdc8036290eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/wiki/single_pages/fretboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/wiki.html" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/wiki.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/single_pages/fretboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/single_pages/fretboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +49,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
@@ -140,7 +140,7 @@
       <workItem from="1660069410047" duration="165000" />
       <workItem from="1660156385920" duration="10000" />
       <workItem from="1677536191554" duration="1208000" />
-      <workItem from="1700636718890" duration="1642000" />
+      <workItem from="1700636718890" duration="2344000" />
     </task>
     <servers />
   </component>
