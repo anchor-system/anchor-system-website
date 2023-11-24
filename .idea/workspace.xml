@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5cf1640-3191-40db-a0f8-bdc8036290eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/applications/fretboard_tile_trainer/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/applications/fretboard_tile_trainer/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/applications/fretboard_tile_trainer/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/applications/javascript/helpers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/single_pages/fretboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/single_pages/fretboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/wiki.html" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/wiki.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +22,7 @@
       <list>
         <option value="Python Script" />
         <option value="CSS File" />
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -28,9 +33,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2BOiEt7bjx8pIra0qIWl3vbE4o0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -39,11 +44,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/ccn/Desktop/anchor-system-website/wiki/single_pages",
+    "last_opened_file_path": "/home/ccn/Desktop/anchor-system-website/applications/fretboard_tile_trainer",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -56,6 +62,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/applications/fretboard_tile_trainer" />
       <recent name="$PROJECT_DIR$/wiki/single_pages" />
       <recent name="C:\Users\c84275317\Desktop\music\the-anchor-system\applications\practice_seed" />
       <recent name="$PROJECT_DIR$/wiki/intermediate" />
@@ -140,7 +147,8 @@
       <workItem from="1660069410047" duration="165000" />
       <workItem from="1660156385920" duration="10000" />
       <workItem from="1677536191554" duration="1208000" />
-      <workItem from="1700636718890" duration="2344000" />
+      <workItem from="1700636718890" duration="2971000" />
+      <workItem from="1700783697094" duration="8651000" />
     </task>
     <servers />
   </component>

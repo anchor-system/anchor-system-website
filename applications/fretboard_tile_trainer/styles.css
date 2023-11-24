@@ -1,0 +1,37 @@
+.blank_cell {
+    border: none;
+}
+
+td {
+    transition: background-color 2s linear;
+}
+
+
+.correct-answer {
+    animation-duration: 0.5s;
+    animation-name: correct_answer;
+}
+
+@keyframes correct_answer {
+    from {
+        background-color: transparent;
+    }
+
+    25% {
+        background-color: green;
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+#fret_board tr td {
+    min-width: 30px;
+    /* remove caret*/
+    color: transparent;text-shadow: 0 0 0 white;
+}
+
+#fret_board tr {
+    height: 60px;
+}
