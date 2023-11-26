@@ -1,0 +1,42 @@
+.blank_cell {
+    border: none;
+}
+
+.edge {
+    border: 1px solid red;
+}
+
+td {
+    transition: background-color .25s linear;
+}
+
+.correct-cell {
+    background-color: green;
+}
+
+
+.correct-answer {
+    animation-duration: 4s;
+    animation-name: correct_answer;
+}
+
+@keyframes correct_answer {
+
+    from {
+        background-color: gold;
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+#fret_board tr td {
+    min-width: 30px;
+    /* remove caret*/
+    color: transparent;text-shadow: 0 0 0 white;
+}
+
+#fret_board tr {
+    height: 60px;
+}

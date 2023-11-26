@@ -1,4 +1,4 @@
-const valid_numbers = [1, 2, 3, 5, 7, 9, 10, 11]
+const valid_numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 const sample_size = 4
 
 let situation_number = random_selection_from_array(valid_numbers)
