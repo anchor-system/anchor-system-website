@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5cf1640-3191-40db-a0f8-bdc8036290eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/wiki/advanced/getting_fast.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/advanced/visualizing_the_fretboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/advanced/visualizing_the_fretboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiki/wiki.html" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/wiki.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/fretboard_trainer_2d/fretboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/applications/fretboard_trainer_2d/fretboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +149,8 @@
       <workItem from="1700944282479" duration="739000" />
       <workItem from="1700947997665" duration="14636000" />
       <workItem from="1701021936743" duration="18000" />
-      <workItem from="1703018829194" duration="7026000" />
+      <workItem from="1703018829194" duration="7516000" />
+      <workItem from="1703477654607" duration="116000" />
     </task>
     <servers />
   </component>
