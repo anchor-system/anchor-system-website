@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #222;
+    color: #fff; /* Text color set to white */
+    flex-direction: column;
+}
+
+#quiz {
+    text-align: center;
+    margin-top: 20px; /* Added margin for spacing */
+}
+
+#keyboard {
+    display: flex;
+    margin-top: 20px;
+}
+
+.white-key, .black-key {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.white-key {
+    width: 40px;
+    height: 200px;
+    background-color: #f0f0f0; /* Light gray for white keys */
+    border: 2px solid #333; /* Darker border for contrast */
+    color: #333; /* Darker border for contrast */
+    margin: 0 2px;
+}
+
+.black-key {
+    width: 30px;
+    height: 120px;
+    background-color: #333; /* Dark background for black keys */
+    position: absolute;
+    margin: 0 1px;
+    left: 30px;
+    z-index: 1;
+    color: white;
+    border: 2px solid #333; /* Darker border for contrast */
+}
+
+.selected {
+    background-color: #4CAF50 !important; /* Green for selected keys */
+    color: white !important;
+    border: 2px solid #333 !important; /* Darker border for contrast */
+}
+
+.white-key .number {
+    position: absolute;
+    bottom: 10px;
+    pointer-events: none;
+}
+
+.black-key .number {
+    position: absolute;
+    top: 10px;
+    pointer-events: none;
+}
+
+.flash-red {
+    background-color: #FF5252 !important; /* Red for flash animation */
+    border: 2px solid #333 !important; /* Darker border for contrast */
+}
+
+.flash-yellow {
+    background-color: #FFEB3B !important; /* Yellow for flash animation */
+    border: 2px solid #333 !important; /* Darker border for contrast */
+}
