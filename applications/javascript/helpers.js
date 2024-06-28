@@ -85,3 +85,21 @@ function array_of_int_to_space_separated_string(arr) {
 /*
  * ENDSECTION: string functions
  */
+
+/*
+ * SECTION: music
+ */
+
+function pos_mod_12(n) {
+    return ((n % 12 ) + 12) % 12
+}
+
+function get_the_note_of_the_day()  {
+    const now = new Date();
+    const fullDaysSinceEpoch = Math.floor(now/8.64e7);
+    return (fullDaysSinceEpoch % 12)
+}
+
+/*
+ * ENDSECTION: music
+ */

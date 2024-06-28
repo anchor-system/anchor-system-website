@@ -34,25 +34,35 @@ document.addEventListener('DOMContentLoaded', function() {
     let useNumberKeyLabels = true;
 
     let currentNoteCollection = [];
+    const use_note_of_the_day = true;
 
     // Loop over the array and process each element
     for (let i = 0; i < allIntervalCollectionsToPullFrom.length; i++) {
         const intervalCollectionItem = allIntervalCollectionsToPullFrom[i];
         const intervalCollectionName = intervalCollectionItem[0];
         const intervalCollection = intervalCollectionItem[1];
-        const mappingOfNoteCollectionNameToNoteCollection = generateListOfNoteCollectionsForEachRootNoteFromAnIntervalCollection(intervalCollectionName, intervalCollection);
-        console.log(mappingOfNoteCollectionNameToNoteCollection)
+
+        var rootNotes;
+        if (use_note_of_the_day) {
+            rootNotes = [get_the_note_of_the_day()]
+        } else {
+            rootNotes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        }
+
+        const mappingOfNoteCollectionNameToNoteCollection = generateListOfNoteCollectionsForEachRootNoteFromAnIntervalCollection(intervalCollectionName, intervalCollection, rootNotes);
         allNoteCollectionsToPullFrom = allNoteCollectionsToPullFrom.concat(mappingOfNoteCollectionNameToNoteCollection );
-        console.log(allNoteCollectionsToPullFrom)
     }
 
 
-    function generateListOfNoteCollectionsForEachRootNoteFromAnIntervalCollection(intervalCollectionName, intervalCollection) {
+
+    function generateListOfNoteCollectionsForEachRootNoteFromAnIntervalCollection(intervalCollectionName, intervalCollection, rootNotes) {
         const noteCollectionForEachRootNote = [];
-        for (let i = 0; i < 12; i++) { // 12 notes in an octave
-            const scaleName = `${selectRandomFlatOrSharp(noteMap[i])} ${intervalCollectionName} `;
+
+        for (let i = 0; i < rootNotes.length; i++) { // 12 notes in an octave
+            const rootNote = rootNotes[i];
+            const scaleName = `${selectRandomFlatOrSharp(noteMap[rootNote])} ${intervalCollectionName} `;
             console.log(scaleName);
-             noteCollectionForEachRootNote.push([scaleName,intervalCollection.map(interval => (i + interval) % 12)]);
+             noteCollectionForEachRootNote.push([scaleName,intervalCollection.map(interval => (rootNote + interval) % 12)]);
         }
         return noteCollectionForEachRootNote;
     }
