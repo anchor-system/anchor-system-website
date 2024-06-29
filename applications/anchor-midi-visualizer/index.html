@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web MIDI Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+    <div id="toggle-settings-modal" class="modal-toggle top-left">
+        <span class="gear-icon" id="toggle-settings">⚙️</span>
+    </div>
+    <div id="note-display"></div>
+    <div class="modal-content" id="settings-modal">
+        <h2>Settings</h2>
+        <div class="modal-section">
+            <h3>Select Root Note</h3>
+            <select id="root-note">
+                <option value="0">C</option>
+                <option value="1">C#</option>
+                <option value="2">D</option>
+                <option value="3">D#</option>
+                <option value="4">E</option>
+                <option value="5">F</option>
+                <option value="6">F#</option>
+                <option value="7">G</option>
+                <option value="8">G#</option>
+                <option value="9">A</option>
+                <option value="10">A#</option>
+                <option value="11">B</option>
+            </select>
+        </div>
+        <div class="modal-section">
+            <h3>Select MIDI Input</h3>
+            <div id="selected-input"></div>
+        </div>
+        <button id="close-modal">Close</button>
+    </div>
+    <script src="midi.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* General Styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; /* Center the song title */
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #cccccc;
+    margin-bottom: 20px;
+    font-size: 24px; /* Example font size for the song title */
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+td {
+    border: 1px solid #333333;
+    padding: 10px;
+    text-align: center;
+    white-space: nowrap;
+    font-size: calc(8px + 1.5vw); /* Responsive font size for table cells */
+}
+
+.double-bar {
+    border-right: 2px solid #ffffff;
+}
+
+.no-border {
+    border: none;
+}
+
+.section-a {
+    background-color: rgba(0, 64, 128, 0.5); /* Subdued blue */
+}
+
+.section-b {
+    background-color: rgba(128, 0, 0, 0.5); /* Subdued red */
+}
+
+@media screen and (max-width: 600px) {
+    td {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    td {
+        font-size: 16px; /* Further adjust font size for very small screens */
+    }
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #333333; /* Dark background */
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 600px;
+    border-radius: 10px;
+    color: #ffffff; /* Light text color */
+}
+
+#textInputList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#textInputList li {
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+#textInputList li:hover {
+    background-color: #555555; /* Darker background on hover */
+}
+
+/* Button */
+#changeTextInputBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    font-size: 24px; /* Example font size for the button */
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#changeTextInputBtn:hover {
+    background-color: #555555; /* Darker background on hover */
+}

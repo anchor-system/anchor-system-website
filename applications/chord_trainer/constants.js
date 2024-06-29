@@ -21,6 +21,9 @@ const four_note_qualities = {
 const QUALITY_ALTERATIONS = {
     "b9": [1,],
     "9": [2,],
+    "10": [4, ],
+    "11": [5, ],
+    "13": [9, ],
     "#9": [3,],
     "#5": [8,],
     "#11": [6,],

@@ -90,6 +90,20 @@ function array_of_int_to_space_separated_string(arr) {
  * SECTION: music
  */
 
+const interval_collections = [
+    ["major scale", [0, 2, 4, 5, 7, 9, 11]],
+    ["minor scale", [0, 2, 3, 5, 7, 8, 10]],
+    ["maj7", [0, 4, 7, 11]],
+    ["min7", [0, 3, 7, 10]],
+    ["dom7", [0, 4, 7, 10]],
+    ["half-dim7", [0, 3, 6, 10]],
+    ["dim7", [0, 3, 6, 9]],
+    ["min-maj7" , [0, 3, 7, 11]],
+    ["maj6", [0, 4, 7, 9]],
+    ["min6", [0, 3, 7, 9]],
+    // ["aug7", [0, 4, 8, 10]],
+]
+
 function pos_mod_12(n) {
     return ((n % 12 ) + 12) % 12
 }

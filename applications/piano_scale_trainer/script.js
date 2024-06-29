@@ -18,18 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const NUM_KEYS_PER_OCTAVE = 12; // Number of keys per octave
     const NUM_OCTAVES = 3; // Number of octaves to display
 
-    const allIntervalCollectionsToPullFrom = [
-        ["Major Scale", [0, 2, 4, 5, 7, 9, 11]],
-        ["Minor Scale", [0, 2, 3, 5, 7, 8, 10]],
-        ["Maj7", [0, 4, 7, 11]],
-        ["Dom7", [0, 4, 7, 10]],
-        ["Half-Dim7", [0, 3, 6, 10]],
-        ["Dim7", [0, 3, 6, 9]],
-        ["Min7", [0, 3, 7, 10]],
-    ]
+    
+    const allIntervalCollectionsToPullFrom = interval_collections;
 
     // Array to store processed results
-    var allNoteCollectionsToPullFrom  = [];
+    var allNoteCollectionsToPullFrom = [];
     let showKeyLabels = false;
     let useNumberKeyLabels = true;
 
@@ -50,10 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const mappingOfNoteCollectionNameToNoteCollection = generateListOfNoteCollectionsForEachRootNoteFromAnIntervalCollection(intervalCollectionName, intervalCollection, rootNotes);
-        allNoteCollectionsToPullFrom = allNoteCollectionsToPullFrom.concat(mappingOfNoteCollectionNameToNoteCollection );
+        allNoteCollectionsToPullFrom = allNoteCollectionsToPullFrom.concat(mappingOfNoteCollectionNameToNoteCollection);
     }
-
-
 
     function generateListOfNoteCollectionsForEachRootNoteFromAnIntervalCollection(intervalCollectionName, intervalCollection, rootNotes) {
         const noteCollectionForEachRootNote = [];
@@ -62,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const rootNote = rootNotes[i];
             const scaleName = `${selectRandomFlatOrSharp(noteMap[rootNote])} ${intervalCollectionName} `;
             console.log(scaleName);
-             noteCollectionForEachRootNote.push([scaleName,intervalCollection.map(interval => (rootNote + interval) % 12)]);
+            noteCollectionForEachRootNote.push([scaleName, intervalCollection.map(interval => (rootNote + interval) % 12)]);
         }
         return noteCollectionForEachRootNote;
     }
@@ -71,7 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const key = document.createElement('div');
         key.classList.add(type + '-key');
         key.dataset.index = index; // Use index as the data attribute
-        key.innerHTML = `<div class="number">${useNumberKeyLabels ? note : noteMap[note]}</div>`;
+        const label = showKeyLabels ? (useNumberKeyLabels ? note : noteMap[note]) : "";
+        key.innerHTML = `<div class="number">${label}</div>`;
         key.addEventListener('click', (event) => {
             event.stopPropagation();
             selectKey(index);
@@ -98,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const usedKeyBehind = whiteKeyIndex === i - 1;
                     const whiteKey = document.querySelector(`[data-index="${whiteKeyIndex}"]`);
                     if (whiteKey) {
-                        key.style.left = `${whiteKey.offsetLeft + (usedKeyBehind ?  1: -1) * (whiteKeyWidth *  .70)}px`;
+                        key.style.left = `${whiteKey.offsetLeft + (usedKeyBehind ? 1 : -1) * (whiteKeyWidth * .70)}px`;
                     }
                 }, 0);
             }
@@ -106,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function pos_mod_12(n) {
-       return ((n % 12 ) + 12) % 12
+        return ((n % 12) + 12) % 12
     }
 
     function updateLabelsUsingCurrentRoot() {
@@ -116,7 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const index = parseInt(key.dataset.index);
             const note = index % 12;
             const currentRoot = currentNoteCollection[0];
-            key.querySelector('.number').innerHTML = useNumberKeyLabels ? pos_mod_12(note - currentRoot) :  noteMap[pos_mod_12(note - currentRoot)];
+            const label = showKeyLabels ? (useNumberKeyLabels ? pos_mod_12(note - currentRoot) : noteMap[pos_mod_12(note - currentRoot)]) : "";
+            key.querySelector('.number').innerHTML = label;
         }
     }
 
@@ -186,15 +179,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Additional functionality for keyboard navigation
+    let currentPendingKeyIndex = 0;
+
+    function updatePendingKey() {
+        document.querySelectorAll('.pending').forEach(el => el.classList.remove('pending'));
+        const pendingKey = document.querySelector(`[data-index="${currentPendingKeyIndex}"]`);
+        if (pendingKey) {
+            pendingKey.classList.add('pending');
+        }
+    }
+
     document.addEventListener('keydown', (event) => {
-        if (event.code === 'Space') {
-            event.preventDefault(); // Prevent default spacebar scrolling behavior
+        if (event.code === 'Enter') {
+            event.preventDefault(); // Prevent default enter behavior
             verifyGuess();
         } else if (event.key === 's') {
             toggleNumbers();
+        } else if (event.code === 'Space') {
+            selectKey(currentPendingKeyIndex);
+        } else if (event.key === 'ArrowLeft') {
+            currentPendingKeyIndex = (currentPendingKeyIndex - 1 + keyboard.children.length) % keyboard.children.length;
+            updatePendingKey();
+        } else if (event.key === 'ArrowRight') {
+            currentPendingKeyIndex = (currentPendingKeyIndex + 1) % keyboard.children.length;
+            updatePendingKey();
         }
     });
 
     createKeyboard();
     startNewRound();
+    updatePendingKey();
 });
