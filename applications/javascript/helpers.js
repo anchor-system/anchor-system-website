@@ -94,10 +94,16 @@ function pos_mod_12(n) {
     return ((n % 12 ) + 12) % 12
 }
 
-function get_the_note_of_the_day()  {
+function get_day_of_the_year() {
     const now = new Date();
-    const fullDaysSinceEpoch = Math.floor(now/8.64e7);
-    return (fullDaysSinceEpoch % 12)
+    const start = new Date(now.getFullYear(), 0, 0);
+    const diff = now - start;
+    const oneDay = 1000 * 60 * 60 * 24;
+    return Math.floor(diff / oneDay);
+}
+
+function get_the_note_of_the_day()  {
+    return pos_mod_12(get_day_of_the_year() + 7) // + 7 temporarily
 }
 
 /*
