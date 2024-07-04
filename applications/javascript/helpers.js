@@ -117,7 +117,7 @@ function get_day_of_the_year() {
 }
 
 function get_the_note_of_the_day()  {
-    return pos_mod_12(get_day_of_the_year() + 7) // + 7 temporarily
+    return pos_mod_12(get_day_of_the_year())
 }
 
 /*
