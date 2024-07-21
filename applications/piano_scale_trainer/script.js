@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     const keyboard = document.getElementById('keyboard');
     const keySignatureElement = document.getElementById('key-signature');
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Array to store processed results
     var allNoteCollectionsToPullFrom = [];
-    let showKeyLabels = false;
+    let showKeyLabels = true;
     let useNumberKeyLabels = true;
 
     let currentNoteCollection = [];
@@ -71,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return key;
     }
 
+    // precondition: there exists a div with an id of "keyboard"
     function createKeyboard() {
         const whiteKeyWidth = 40;
         const blackKeyWidth = 30;

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Midi Visualizer</title>
+    <link rel="stylesheet" href="../piano_scale_trainer/piano.css">
+</head>
+<body>
+<div id="quiz">
+    <div id="keyboard"></div>
+</div>
+
+<script src="../javascript/helpers.js"></script>
+<script src="../piano_scale_trainer/piano.js"></script>
+<script src="../anchor-midi-visualizer/midi.js"></script>
+<script>
+
+    let piano = new Piano(5, true, true);
+
+    function midi_event_callback(midi_message) {
+        const [command, midi_note, velocity] = midi_message.data;
+        const c4_dist_note = midi_to_dist_from_c4(midi_note);
+        const keyboard_key_index = c4_dist_note + piano.c4_index;
+
+
+        if (command === 144 && velocity > 0 ) { // Note on
+            console.log(keyboard_key_index);
+            piano.select_key_on_keyboard(keyboard_key_index);
+        } else if (command === 128 || (command === 144 && velocity === 0)) { // Note off
+            piano.deselect_key_on_keyboard(keyboard_key_index);
+        }
+    }
+
+    let midi = new Midi(midi_event_callback);
+</script>
+</body>
+</html>

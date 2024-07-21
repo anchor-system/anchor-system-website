@@ -90,6 +90,18 @@ function array_of_int_to_space_separated_string(arr) {
  * SECTION: music
  */
 
+const note_map = ['C', 'C#/Db', 'D', 'D#/Eb', 'E', 'F', 'F#/Gb', 'G', 'G#/Ab', 'A', 'A#/Bb', 'B'];
+
+function select_random_flat_or_sharp(note) {
+    if (note.includes('/')) {
+        const parts = note.split('/'); // Split note into parts
+        const randomIndex = Math.floor(Math.random() * 2);
+        return parts[randomIndex]; // Return either parts[0] or parts[1]
+    } else {
+        return note;
+    }
+}
+
 const interval_collections = [
     ["major scale", [0, 2, 4, 5, 7, 9, 11]],
     ["minor scale", [0, 2, 3, 5, 7, 8, 10]],
@@ -118,6 +130,10 @@ function get_day_of_the_year() {
 
 function get_the_note_of_the_day()  {
     return pos_mod_12(get_day_of_the_year())
+}
+
+function midi_to_dist_from_c4(midi_note_number) {
+   return midi_note_number - 60;
 }
 
 /*
