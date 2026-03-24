@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interval Piano</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background: #111;
+            font-family: monospace;
+            color: #ccc;
+        }
+
+        .sidebar {
+            width: 200px;
+            min-width: 200px;
+            background: #0a0a0a;
+            border-right: 1px solid #222;
+            padding: 15px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow-y: auto;
+            max-height: 100vh;
+        }
+
+        .sidebar h2 { font-size: 0.9rem; color: #888; }
+
+        .sidebar select {
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #333;
+            background: #1a1a1a;
+            color: #ccc;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .sidebar select option { background: #1a1a1a; }
+
+        .current-anchor {
+            font-size: 1.6rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            color: #ddd;
+        }
+
+        .synth-cards { display: flex; flex-direction: column; gap: 4px; }
+
+        .synth-card {
+            padding: 8px;
+            border: 1px solid #333;
+            background: #1a1a1a;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .synth-card:hover { background: #222; }
+        .synth-card.active { border-color: #888; background: #222; }
+        .synth-card .synth-name { font-weight: bold; color: #ccc; }
+        .synth-card .synth-desc { color: #666; font-size: 0.7rem; margin-top: 2px; }
+
+        .volume-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        .volume-row label { min-width: 30px; }
+
+        .volume-row input[type="range"] {
+            flex: 1;
+            height: 4px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #333;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .volume-row input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px; height: 12px;
+            background: #888;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .sidebar-section {
+            border-top: 1px solid #222;
+            padding-top: 10px;
+            margin-top: 4px;
+        }
+
+        .notation-help {
+            margin-top: auto;
+            font-size: 0.65rem;
+            color: #444;
+            padding-top: 10px;
+            border-top: 1px solid #222;
+            line-height: 1.6;
+        }
+
+        .caps-toggle {
+            padding: 8px;
+            border: 1px solid #333;
+            background: #1a1a1a;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #888;
+            text-align: center;
+        }
+
+        .caps-toggle:hover { background: #222; }
+        .caps-toggle.active { border-color: #888; background: #222; color: #ccc; }
+
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 15px;
+            overflow-y: auto;
+        }
+
+        .main h1 { font-size: 1.4rem; margin-bottom: 3px; color: #aaa; }
+        .main .subtitle { color: #555; margin-bottom: 25px; font-size: 0.8rem; }
+
+        .interval-display {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            width: 100%;
+            max-width: 1050px;
+        }
+
+        .row-container { display: flex; align-items: center; gap: 8px; }
+
+        .row-label {
+            width: 80px;
+            min-width: 80px;
+            text-align: right;
+            font-size: 0.65rem;
+            color: #555;
+        }
+
+        .key-row { display: flex; gap: 3px; flex-wrap: wrap; }
+
+        .interval-key {
+            width: 64px;
+            height: 68px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.06s;
+            user-select: none;
+            border: 1px solid #333;
+            background: #1a1a1a;
+        }
+
+        .interval-key .interval-number { font-size: 1.2rem; font-weight: bold; color: #bbb; }
+        .interval-key .note-label { font-size: 0.55rem; color: #555; margin-top: 1px; }
+        .interval-key .key-letter { font-size: 0.6rem; color: #444; margin-top: 3px; }
+
+        .interval-key:hover { background: #222; border-color: #444; }
+
+        .interval-key.active {
+            background: #333;
+            border-color: #888;
+            transform: scale(0.96);
+        }
+
+        .interval-key.active .interval-number { color: #fff; }
+
+        .now-playing {
+            margin-top: 25px;
+            font-size: 1.2rem;
+            min-height: 40px;
+            color: #888;
+            text-align: center;
+        }
+
+        .now-playing .interval-info { font-size: 0.8rem; color: #555; margin-top: 3px; }
+
+        .active-intervals {
+            margin-top: 15px;
+            padding: 15px 25px;
+            background: #0a0a0a;
+            border: 1px solid #222;
+            border-radius: 4px;
+            min-height: 50px;
+            width: 100%;
+            max-width: 1050px;
+            text-align: center;
+        }
+
+        .active-intervals .label {
+            font-size: 0.7rem;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        .active-intervals .intervals-list {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #ccc;
+            letter-spacing: 4px;
+            min-height: 30px;
+            font-family: monospace;
+        }
+
+        .active-intervals .notes-list {
+            font-size: 0.75rem;
+            color: #555;
+            margin-top: 4px;
+        }
+
+        .legend {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: #0a0a0a;
+            border: 1px solid #222;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: #555;
+            max-width: 700px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Anchor Note</h2>
+        <select id="anchorSelect"></select>
+        <div class="current-anchor" id="currentAnchorDisplay">C4</div>
+
+        <div class="sidebar-section">
+            <h2>Synthesizer</h2>
+            <div class="synth-cards" id="synthCards">
+                <div class="synth-card active" data-synth="basic">
+                    <div class="synth-name">Basic</div>
+                    <div class="synth-desc">Triangle + sine</div>
+                </div>
+                <div class="synth-card" data-synth="rhodes">
+                    <div class="synth-name">Rhodes EP</div>
+                    <div class="synth-desc">Electric piano with bell tone</div>
+                </div>
+                <div class="synth-card" data-synth="piano">
+                    <div class="synth-name">Acoustic Piano</div>
+                    <div class="synth-desc">Harmonic series with damping</div>
+                </div>
+                <div class="synth-card" data-synth="pad">
+                    <div class="synth-name">Warm Pad</div>
+                    <div class="synth-desc">Slow detuned layers</div>
+                </div>
+                <div class="synth-card" data-synth="organ">
+                    <div class="synth-name">Organ</div>
+                    <div class="synth-desc">Drawbar harmonics</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="volume-row">
+                <label>Vol</label>
+                <input type="range" id="volumeSlider" min="0" max="100" value="70">
+            </div>
+            <div class="volume-row" style="margin-top:6px;">
+                <label>Rev</label>
+                <input type="range" id="reverbSlider" min="0" max="100" value="30">
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <h2>Options</h2>
+            <div class="caps-toggle" id="capsToggle">
+                CapsLock = Escape: OFF
+            </div>
+        </div>
+
+        <div class="notation-help">
+            Notation:<br>
+            7 = 7 semitones<br>
+            7' = octave up<br>
+            7'' = 2 oct up<br>
+            7, = octave down<br>
+            7,, = 2 oct down
+        </div>
+    </div>
+
+    <div class="main">
+        <h1>Interval Piano</h1>
+        <p class="subtitle">Notes as semitone distances from anchor</p>
+        <div class="interval-display" id="intervalDisplay"></div>
+
+        <div class="active-intervals" id="activeIntervals">
+            <div class="label">Active intervals</div>
+            <div class="intervals-list" id="intervalsList"></div>
+            <div class="notes-list" id="notesList"></div>
+        </div>
+
+        <div class="now-playing" id="nowPlaying"></div>
+
+        <div class="legend">
+            Row mapping (chromatic from anchor):<br>
+            ` 1 2 3 4 5 6 7 8 9 0 - = | Anchor +2 oct (0-12)<br>
+            Tab Q W E R T Y U I O P [ ] | Anchor +1 oct (0-12)<br>
+            Caps A S D F G H J K L ; ' Ent | Anchor home (0-12)<br>
+            LSh Z X C V B N M , . / RSh | Anchor -1 oct (0-11)
+        </div>
+    </div>
+
+    <script>
+        const NOTE_NAMES = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+
+        // Bottom row: 12 keys (0-11), top 3 rows: 12 keys each (0-11, no extra 0)
+        const ROWS = [
+            { label: 'Anchor -1 oct', offset: -1, keys: ['lshift','z','x','c','v','b','n','m',',','.','/','rshift'] },
+            { label: 'Anchor (home)', offset: 0,  keys: ['caps','a','s','d','f','g','h','j','k','l',';',"'"] },
+            { label: 'Anchor +1 oct', offset: 1,  keys: ['tab','q','w','e','r','t','y','u','i','o','p','['] },
+            { label: 'Anchor +2 oct', offset: 2,  keys: ['`','1','2','3','4','5','6','7','8','9','0','-'] },
+        ];
+
+        let capsIsEscape = false;
+
+        // Use e.code for physical key detection — avoids shift-modified characters
+        const CODE_TO_ID = {
+            'ShiftLeft': 'lshift',
+            'ShiftRight': 'rshift',
+            'CapsLock': 'caps',
+            'Tab': 'tab',
+            'Enter': 'enter',
+            'Backquote': '`',
+            'Digit1': '1', 'Digit2': '2', 'Digit3': '3', 'Digit4': '4',
+            'Digit5': '5', 'Digit6': '6', 'Digit7': '7', 'Digit8': '8',
+            'Digit9': '9', 'Digit0': '0',
+            'Minus': '-', 'Equal': '=',
+            'KeyQ': 'q', 'KeyW': 'w', 'KeyE': 'e', 'KeyR': 'r',
+            'KeyT': 't', 'KeyY': 'y', 'KeyU': 'u', 'KeyI': 'i',
+            'KeyO': 'o', 'KeyP': 'p',
+            'BracketLeft': '[', 'BracketRight': ']',
+            'KeyA': 'a', 'KeyS': 's', 'KeyD': 'd', 'KeyF': 'f',
+            'KeyG': 'g', 'KeyH': 'h', 'KeyJ': 'j', 'KeyK': 'k',
+            'KeyL': 'l',
+            'Semicolon': ';', 'Quote': "'",
+            'KeyZ': 'z', 'KeyX': 'x', 'KeyC': 'c', 'KeyV': 'v',
+            'KeyB': 'b', 'KeyN': 'n', 'KeyM': 'm',
+            'Comma': ',', 'Period': '.', 'Slash': '/',
+        };
+
+        function eventToId(e) {
+            // Handle Escape -> caps remapping
+            if (e.code === 'Escape' && capsIsEscape) return 'caps';
+            return CODE_TO_ID[e.code] || null;
+        }
+
+        function displayKey(k) {
+            const map = {
+                'lshift':'LSh', 'rshift':'RSh', 'caps':'Cap', 'tab':'Tab',
+                'enter':'Ent', '`':'~`',
+                ',':',', '.':'.', '/':'/', ';':';', "'":"'", '[':'[', ']':']', '-':'-', '=':'='
+            };
+            return map[k] || k.toUpperCase();
+        }
+
+        let anchorMidi = 60;
+        let currentSynth = 'basic';
+        let masterVolume = 0.7;
+        let reverbAmount = 0.3;
+        const activeKeys = new Set();
+        const activeVoices = {};
+
+        // Track physical shift states independently
+        let lshiftDown = false;
+        let rshiftDown = false;
+
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        let audioCtx, masterGain, convolver, dryGain, wetGain;
+
+        function getCtx() {
+            if (!audioCtx) {
+                audioCtx = new AudioCtx();
+                masterGain = audioCtx.createGain();
+                masterGain.gain.value = masterVolume;
+                convolver = audioCtx.createConvolver();
+                convolver.buffer = createReverbIR(audioCtx, 2.5, 3);
+                dryGain = audioCtx.createGain();
+                wetGain = audioCtx.createGain();
+                updateReverbMix();
+                masterGain.connect(dryGain).connect(audioCtx.destination);
+                masterGain.connect(convolver).connect(wetGain).connect(audioCtx.destination);
+            }
+            return audioCtx;
+        }
+
+        function updateReverbMix() {
+            if (!dryGain) return;
+            dryGain.gain.value = 1;
+            wetGain.gain.value = reverbAmount;
+        }
+
+        function createReverbIR(ctx, duration, decay) {
+            const rate = ctx.sampleRate;
+            const length = rate * duration;
+            const impulse = ctx.createBuffer(2, length, rate);
+            for (let ch = 0; ch < 2; ch++) {
+                const data = impulse.getChannelData(ch);
+                for (let i = 0; i < length; i++) {
+                    data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / length, decay);
+                }
+            }
+            return impulse;
+        }
+
+        function midiToFreq(midi) { return 440 * Math.pow(2, (midi - 69) / 12); }
+        function midiToNoteName(midi) {
+            return NOTE_NAMES[((midi % 12) + 12) % 12] + (Math.floor(midi / 12) - 1);
+        }
+
+        // ========== SYNTHESIZERS ==========
+
+        function playBasic(midi) {
+            const ctx = getCtx(); const freq = midiToFreq(midi); const now = ctx.currentTime;
+            const osc1 = ctx.createOscillator(); osc1.type = 'triangle'; osc1.frequency.value = freq;
+            const osc2 = ctx.createOscillator(); osc2.type = 'sine'; osc2.frequency.value = freq; osc2.detune.value = 6;
+            const g1 = ctx.createGain(); g1.gain.setValueAtTime(0, now);
+            g1.gain.linearRampToValueAtTime(0.35, now + 0.015);
+            g1.gain.linearRampToValueAtTime(0.25, now + 0.1);
+            const g2 = ctx.createGain(); g2.gain.setValueAtTime(0, now);
+            g2.gain.linearRampToValueAtTime(0.12, now + 0.015);
+            g2.gain.linearRampToValueAtTime(0.08, now + 0.1);
+            osc1.connect(g1).connect(masterGain); osc2.connect(g2).connect(masterGain);
+            osc1.start(); osc2.start();
+            return { nodes: [osc1, osc2], gains: [g1, g2], release: 0.25 };
+        }
+
+        function playRhodes(midi) {
+            const ctx = getCtx(); const freq = midiToFreq(midi); const now = ctx.currentTime;
+            const nodes = [], gains = [];
+            const partials = [
+                { f: freq,     type:'sine', a:0.28, peakT:0.006, decay1:0.6, lv1:0.14, decay2:2.5, lv2:0.001 },
+                { f: freq*2,   type:'sine', a:0.10, peakT:0.006, decay1:0.5, lv1:0.04, decay2:1.8, lv2:0.001 },
+                { f: freq*3,   type:'sine', a:0.04, peakT:0.004, decay1:0.15,lv1:0.008,decay2:0.6, lv2:0.001 },
+                { f: freq*4,   type:'sine', a:0.09, peakT:0.003, decay1:0.08,lv1:0.005,decay2:0.35,lv2:0.001 },
+                { f: freq*7,   type:'sine', a:0.04, peakT:0.002, decay1:0.04,lv1:0.002,decay2:0.12,lv2:0.001 },
+            ];
+            for (const p of partials) {
+                if (p.f > 16000) continue;
+                const osc = ctx.createOscillator(); osc.type = p.type; osc.frequency.value = p.f;
+                const g = ctx.createGain();
+                g.gain.setValueAtTime(0, now);
+                g.gain.linearRampToValueAtTime(p.a, now + p.peakT);
+                g.gain.exponentialRampToValueAtTime(p.lv1, now + p.decay1);
+                g.gain.exponentialRampToValueAtTime(p.lv2, now + p.decay2);
+                osc.connect(g).connect(masterGain);
+                osc.start(now); osc.stop(now + p.decay2 + 0.1);
+                nodes.push(osc); gains.push(g);
+            }
+            const lfo = ctx.createOscillator(); lfo.type = 'sine'; lfo.frequency.value = 5;
+            const lfoG = ctx.createGain(); lfoG.gain.value = 1.2;
+            lfo.connect(lfoG).connect(nodes[0].frequency);
+            lfo.start(now); lfo.stop(now + 3);
+            nodes.push(lfo);
+            return { nodes, gains, release: 0.12, selfTerminating: true };
+        }
+
+        function playPiano(midi) {
+            const ctx = getCtx(); const freq = midiToFreq(midi); const now = ctx.currentTime;
+            const nodes = [], gains = [];
+            const decayMul = Math.max(0.5, 1.2 - (midi - 36) / 72);
+            const B = 0.0004;
+            const harmonics = [
+                { ratio:1,  amp:0.30, attack:0.008, sustain:0.22, sustainT:0.15, decay:3.0 },
+                { ratio:2,  amp:0.18, attack:0.006, sustain:0.10, sustainT:0.12, decay:2.2 },
+                { ratio:3,  amp:0.08, attack:0.005, sustain:0.03, sustainT:0.10, decay:1.4 },
+                { ratio:4,  amp:0.05, attack:0.004, sustain:0.015,sustainT:0.08, decay:0.9 },
+                { ratio:5,  amp:0.025,attack:0.003, sustain:0.006,sustainT:0.06, decay:0.6 },
+                { ratio:6,  amp:0.015,attack:0.003, sustain:0.003,sustainT:0.05, decay:0.4 },
+            ];
+            for (const h of harmonics) {
+                const pf = freq * h.ratio * Math.sqrt(1 + B * h.ratio * h.ratio);
+                if (pf > 16000) continue;
+                const d = h.decay * decayMul;
+                const osc = ctx.createOscillator(); osc.type = 'sine'; osc.frequency.value = pf;
+                const g = ctx.createGain();
+                g.gain.setValueAtTime(0, now);
+                g.gain.linearRampToValueAtTime(h.amp, now + h.attack);
+                g.gain.exponentialRampToValueAtTime(Math.max(h.sustain, 0.001), now + h.sustainT);
+                g.gain.exponentialRampToValueAtTime(Math.max(h.sustain * 0.4, 0.001), now + d * 0.5);
+                g.gain.exponentialRampToValueAtTime(0.001, now + d);
+                osc.connect(g).connect(masterGain);
+                osc.start(now); osc.stop(now + d + 0.1);
+                nodes.push(osc); gains.push(g);
+            }
+            for (const det of [-4, 4]) {
+                const osc = ctx.createOscillator(); osc.type = 'sine';
+                osc.frequency.value = freq; osc.detune.value = det;
+                const d = 2.5 * decayMul;
+                const g = ctx.createGain();
+                g.gain.setValueAtTime(0, now);
+                g.gain.linearRampToValueAtTime(0.06, now + 0.008);
+                g.gain.exponentialRampToValueAtTime(0.03, now + 0.2);
+                g.gain.exponentialRampToValueAtTime(0.001, now + d);
+                osc.connect(g).connect(masterGain);
+                osc.start(now); osc.stop(now + d + 0.1);
+                nodes.push(osc); gains.push(g);
+            }
+            const noiseLen = 0.025;
+            const bufSz = ctx.sampleRate * noiseLen;
+            const nBuf = ctx.createBuffer(1, bufSz, ctx.sampleRate);
+            const nd = nBuf.getChannelData(0);
+            for (let i = 0; i < bufSz; i++) nd[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufSz, 6);
+            const ns = ctx.createBufferSource(); ns.buffer = nBuf;
+            const nf = ctx.createBiquadFilter(); nf.type = 'bandpass'; nf.frequency.value = freq; nf.Q.value = 3;
+            const ng = ctx.createGain(); ng.gain.value = 0.04;
+            ns.connect(nf).connect(ng).connect(masterGain);
+            ns.start(now); nodes.push(ns);
+            return { nodes, gains, release: 0.3, selfTerminating: true };
+        }
+
+        function playPad(midi) {
+            const ctx = getCtx(); const freq = midiToFreq(midi); const now = ctx.currentTime;
+            const nodes = [], gains = [];
+            const detunes = [-12, -5, 0, 5, 12];
+            const types = ['sine','triangle','sine','triangle','sine'];
+            detunes.forEach((d, i) => {
+                const osc = ctx.createOscillator(); osc.type = types[i]; osc.frequency.value = freq; osc.detune.value = d;
+                const g = ctx.createGain(); g.gain.setValueAtTime(0, now);
+                g.gain.linearRampToValueAtTime(0.08, now + 0.4);
+                g.gain.linearRampToValueAtTime(0.06, now + 1.0);
+                osc.connect(g).connect(masterGain); osc.start();
+                nodes.push(osc); gains.push(g);
+            });
+            const sub = ctx.createOscillator(); sub.type = 'sine'; sub.frequency.value = freq / 2;
+            const sg = ctx.createGain(); sg.gain.setValueAtTime(0, now);
+            sg.gain.linearRampToValueAtTime(0.05, now + 0.5);
+            sub.connect(sg).connect(masterGain); sub.start();
+            nodes.push(sub); gains.push(sg);
+            const lfo = ctx.createOscillator(); lfo.type = 'sine'; lfo.frequency.value = 0.3;
+            detunes.forEach((_, i) => {
+                const lg = ctx.createGain(); lg.gain.value = 4;
+                lfo.connect(lg).connect(nodes[i].detune);
+            });
+            lfo.start(); nodes.push(lfo);
+            return { nodes, gains, release: 1.2 };
+        }
+
+        function playOrgan(midi) {
+            const ctx = getCtx(); const freq = midiToFreq(midi); const now = ctx.currentTime;
+            const nodes = [], gains = [];
+            const drawbars = [
+                { ratio:0.5, amp:0.12 }, { ratio:1, amp:0.25 }, { ratio:1.5, amp:0.08 },
+                { ratio:2, amp:0.18 }, { ratio:3, amp:0.10 }, { ratio:4, amp:0.12 },
+                { ratio:6, amp:0.05 }, { ratio:8, amp:0.04 },
+            ];
+            for (const d of drawbars) {
+                const f = freq * d.ratio; if (f > 16000) continue;
+                const osc = ctx.createOscillator(); osc.type = 'sine'; osc.frequency.value = f;
+                const g = ctx.createGain(); g.gain.setValueAtTime(0, now);
+                g.gain.linearRampToValueAtTime(d.amp, now + 0.01);
+                osc.connect(g).connect(masterGain); osc.start();
+                nodes.push(osc); gains.push(g);
+            }
+            const lfo = ctx.createOscillator(); lfo.type = 'sine'; lfo.frequency.value = 6;
+            const lfoG = ctx.createGain(); lfoG.gain.value = 3;
+            lfo.connect(lfoG).connect(nodes[1].frequency);
+            lfo.start(); nodes.push(lfo);
+            return { nodes, gains, release: 0.08 };
+        }
+
+        function playNote(midi) {
+            const ctx = getCtx();
+            if (activeVoices[midi]) stopNote(midi);
+            let voice;
+            switch (currentSynth) {
+                case 'rhodes': voice = playRhodes(midi); break;
+                case 'piano':  voice = playPiano(midi); break;
+                case 'pad':    voice = playPad(midi); break;
+                case 'organ':  voice = playOrgan(midi); break;
+                default:       voice = playBasic(midi); break;
+            }
+            activeVoices[midi] = voice;
+        }
+
+        function stopNote(midi) {
+            const ctx = getCtx();
+            const voice = activeVoices[midi];
+            if (!voice) return;
+            const now = ctx.currentTime;
+            const rel = voice.release || 0.3;
+            voice.gains.forEach(g => {
+                try {
+                    g.gain.cancelScheduledValues(now);
+                    g.gain.setValueAtTime(g.gain.value, now);
+                    g.gain.linearRampToValueAtTime(0, now + rel);
+                } catch(e) {}
+            });
+            voice.nodes.forEach(n => { try { n.stop(now + rel + 0.05); } catch(e) {} });
+            delete activeVoices[midi];
+        }
+
+        // ---- INTERVAL ----
+        function getIntervalLabel(midi, anchor) {
+            const diff = midi - anchor;
+            const semitone = ((diff % 12) + 12) % 12;
+            const octaveOffset = Math.floor(diff / 12);
+            let label = String(semitone);
+            if (octaveOffset > 0) label += "'".repeat(octaveOffset);
+            else if (octaveOffset < 0) label += ",".repeat(-octaveOffset);
+            return label;
+        }
+
+        function buildKeyMap() {
+            const map = {};
+            for (const row of ROWS) {
+                const baseMidi = anchorMidi + row.offset * 12;
+                row.keys.forEach((k, i) => { map[k] = baseMidi + i; });
+            }
+            return map;
+        }
+
+        let keyMap = buildKeyMap();
+
+        // ---- ACTIVE INTERVALS DISPLAY ----
+        function updateActiveIntervalsDisplay() {
+            const midis = [];
+            for (const k of activeKeys) {
+                const m = keyMap[k];
+                if (m !== undefined) midis.push(m);
+            }
+            midis.sort((a, b) => a - b);
+            const intervalsEl = document.getElementById('intervalsList');
+            const notesEl = document.getElementById('notesList');
+            if (midis.length === 0) {
+                intervalsEl.textContent = '';
+                notesEl.textContent = '';
+                return;
+            }
+            const intervals = midis.map(m => getIntervalLabel(m, anchorMidi));
+            const notes = midis.map(m => midiToNoteName(m));
+            intervalsEl.textContent = intervals.join('  ');
+            notesEl.textContent = notes.join('  ');
+        }
+
+        // ---- UI ----
+        function buildAnchorSelect() {
+            const sel = document.getElementById('anchorSelect');
+            sel.innerHTML = '';
+            for (let oct = 1; oct <= 7; oct++) {
+                for (let n = 0; n < 12; n++) {
+                    const midi = (oct + 1) * 12 + n;
+                    const name = midiToNoteName(midi);
+                    const opt = document.createElement('option');
+                    opt.value = midi; opt.textContent = name;
+                    if (midi === anchorMidi) opt.selected = true;
+                    sel.appendChild(opt);
+                }
+            }
+            sel.addEventListener('change', () => {
+                anchorMidi = parseInt(sel.value);
+                keyMap = buildKeyMap();
+                renderDisplay();
+                document.getElementById('currentAnchorDisplay').textContent = midiToNoteName(anchorMidi);
+                updateActiveIntervalsDisplay();
+            });
+        }
+
+        function renderDisplay() {
+            const container = document.getElementById('intervalDisplay');
+            container.innerHTML = '';
+            const rowsReversed = [...ROWS].reverse();
+            for (const row of rowsReversed) {
+                const rowDiv = document.createElement('div'); rowDiv.className = 'row-container';
+                const labelDiv = document.createElement('div'); labelDiv.className = 'row-label';
+                labelDiv.textContent = row.label; rowDiv.appendChild(labelDiv);
+                const keysDiv = document.createElement('div'); keysDiv.className = 'key-row';
+                row.keys.forEach((k, i) => {
+                    const midi = anchorMidi + row.offset * 12 + i;
+                    const semitone = ((midi - anchorMidi) % 12 + 12) % 12;
+                    const intervalLabel = getIntervalLabel(midi, anchorMidi);
+                    const keyEl = document.createElement('div');
+                    keyEl.className = 'interval-key';
+                    keyEl.dataset.key = k; keyEl.dataset.midi = midi; keyEl.dataset.semitone = semitone;
+                    keyEl.innerHTML = `<div class="interval-number">${intervalLabel}</div><div class="note-label">${midiToNoteName(midi)}</div><div class="key-letter">${displayKey(k)}</div>`;
+                    keyEl.addEventListener('mousedown', (e) => { e.preventDefault(); activateKey(k); });
+                    keyEl.addEventListener('mouseup', () => deactivateKey(k));
+                    keyEl.addEventListener('mouseleave', () => { if (activeKeys.has(k)) deactivateKey(k); });
+                    keyEl.addEventListener('touchstart', (e) => { e.preventDefault(); activateKey(k); });
+                    keyEl.addEventListener('touchend', (e) => { e.preventDefault(); deactivateKey(k); });
+                    keysDiv.appendChild(keyEl);
+                });
+                rowDiv.appendChild(keysDiv); container.appendChild(rowDiv);
+            }
+        }
+
+        function activateKey(k) {
+            if (activeKeys.has(k)) return;
+            activeKeys.add(k);
+            const midi = keyMap[k]; if (midi === undefined) return;
+            playNote(midi);
+            document.querySelectorAll(`.interval-key[data-key="${CSS.escape(k)}"]`).forEach(el => el.classList.add('active'));
+            const intervalLabel = getIntervalLabel(midi, anchorMidi);
+            document.getElementById('nowPlaying').innerHTML = `${midiToNoteName(midi)}<div class="interval-info">${intervalLabel} from ${midiToNoteName(anchorMidi)}</div>`;
+            updateActiveIntervalsDisplay();
+        }
+
+        function deactivateKey(k) {
+            if (!activeKeys.has(k)) return;
+            activeKeys.delete(k);
+            const midi = keyMap[k]; if (midi === undefined) return;
+            stopNote(midi);
+            document.querySelectorAll(`.interval-key[data-key="${CSS.escape(k)}"]`).forEach(el => el.classList.remove('active'));
+            updateActiveIntervalsDisplay();
+        }
+
+        // ---- KEYBOARD EVENTS (using e.code for physical keys) ----
+        document.addEventListener('keydown', (e) => {
+            const id = eventToId(e);
+            if (id && keyMap[id] !== undefined) {
+                e.preventDefault();
+                // Track shift states
+                if (id === 'lshift') lshiftDown = true;
+                if (id === 'rshift') rshiftDown = true;
+                activateKey(id);
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            const id = eventToId(e);
+            if (!id) return;
+
+            // Handle shift release carefully
+            if (id === 'lshift') {
+                lshiftDown = false;
+                deactivateKey('lshift');
+                return;
+            }
+            if (id === 'rshift') {
+                rshiftDown = false;
+                deactivateKey('rshift');
+                return;
+            }
+
+            deactivateKey(id);
+        });
+
+        // Safety: if browser fires a generic 'Shift' keyup when one shift is released
+        // while the other is still held, we need to handle that
+        window.addEventListener('keyup', (e) => {
+            // Some browsers coalesce shift keyup — double-check our states
+            if (e.key === 'Shift') {
+                if (e.code === 'ShiftLeft') {
+                    lshiftDown = false;
+                    deactivateKey('lshift');
+                } else if (e.code === 'ShiftRight') {
+                    rshiftDown = false;
+                    deactivateKey('rshift');
+                }
+            }
+        }, true);
+
+        // Caps lock toggle
+        document.getElementById('capsToggle').addEventListener('click', () => {
+            capsIsEscape = !capsIsEscape;
+            const el = document.getElementById('capsToggle');
+            el.textContent = `CapsLock = Escape: ${capsIsEscape ? 'ON' : 'OFF'}`;
+            el.classList.toggle('active', capsIsEscape);
+        });
+
+        document.querySelectorAll('.synth-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.synth-card').forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                currentSynth = card.dataset.synth;
+                Object.keys(activeVoices).forEach(m => stopNote(parseInt(m)));
+                activeKeys.clear();
+                lshiftDown = false; rshiftDown = false;
+                document.querySelectorAll('.interval-key.active').forEach(el => el.classList.remove('active'));
+                updateActiveIntervalsDisplay();
+            });
+        });
+
+        document.getElementById('volumeSlider').addEventListener('input', (e) => {
+            masterVolume = e.target.value / 100;
+            if (masterGain) masterGain.gain.value = masterVolume;
+        });
+        document.getElementById('reverbSlider').addEventListener('input', (e) => {
+            reverbAmount = e.target.value / 100;
+            updateReverbMix();
+        });
+
+        buildAnchorSelect();
+        renderDisplay();
+        document.getElementById('currentAnchorDisplay').textContent = midiToNoteName(anchorMidi);
+    </script>
+</body>
+</html>
